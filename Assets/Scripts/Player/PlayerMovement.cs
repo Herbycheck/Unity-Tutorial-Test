@@ -3,11 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 movement = new Vector2();
+    [SerializeField] float speed;
+    Vector3 movement = new Vector3();
 
     private void Update()
     {
-        transform.position += movement;
+        transform.position += movement * Time.deltaTime * speed;
     }
 
     public void GetPlayerMovement(InputAction.CallbackContext context)
