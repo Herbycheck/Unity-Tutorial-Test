@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 4855257319186931057}
   - component: {fileID: 3923821512201034631}
   - component: {fileID: 3234373451000657637}
+  - component: {fileID: 2565076073789599741}
   - component: {fileID: 656435057912861226}
   m_Layer: 0
   m_Name: Body
@@ -453,6 +454,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &2565076073789599741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599984251519740543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34463ceb3abe4249ad2ba7bbb990eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLook
+  data: {fileID: 11400000, guid: 77dbc88da51394c49a75294a4b5db1a5, type: 2}
 --- !u!114 &656435057912861226
 MonoBehaviour:
   m_ObjectHideFlags: 0
