@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] PlayerData data;
     Vector3 movement = new Vector3();
 
+
     private void Update()
     {
         transform.position += movement * Time.deltaTime * speed;
