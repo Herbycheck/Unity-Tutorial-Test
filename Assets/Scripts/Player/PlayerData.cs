@@ -6,4 +6,5 @@ public class PlayerData : ScriptableObject
     public Vector3 lookPoint;
     public Vector3 playerPosition;
     public float maxHP, currentHP;
+    public int highScore, score;
 }

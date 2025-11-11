@@ -30,6 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (collision.transform.tag == "bullet")
         {
+            playerData.score++;
             Destroy(collision.gameObject);
             Destroy(gameObject);
             return;
