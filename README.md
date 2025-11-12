@@ -70,8 +70,8 @@ private void Update()
 ```
 Now we can change the speed value live in the Unity Editor.
 
-> [!TIP] Changes in Gaming Mode and Prefabs
->  Don't forget that changes aren't being saved in gaming mode and it won't change it on the Prefab if you don't apply it directly into the Prefab or override it.
+> [!TIP]
+> Don't forget that changes aren't being saved in gaming mode and it won't change it on the Prefab if you don't apply it directly into the Prefab or override it.
  
 **Nice Time to Commit 👁️👁️**  
 
