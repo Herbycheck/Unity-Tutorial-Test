@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
         {
             data.highScore = data.score;
         }
+        SceneManager.LoadScene("GameOver");
 
     }
 }
