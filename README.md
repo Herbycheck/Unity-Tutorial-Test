@@ -331,9 +331,9 @@ With the Enemy speed you can try it yourself how to make it a bit random, I woul
 **Nice Time to Commit 👁️👁️**  
 
 ## Shooting at Enemy
-> How about we add a simple shooting mechanic. For this we do this in another Branch. <br>
-> First we will need to add a model to it. (Maybe even a sound if you'd like). <br>
-> We than add a simple BulletsScript where we just go along the direction we are looking at, that looks like this:
+How about we add a simple shooting mechanic. For this we do this in another Branch.   
+First we will need to add a model to it. (Maybe even a sound if you'd like).   
+We than add a simple BulletsScript where we just go along the direction we are looking at, that looks like this:
 ```C#
 [SerializeField] float Speed;
 
@@ -342,9 +342,11 @@ With the Enemy speed you can try it yourself how to make it a bit random, I woul
         transform.position += transform.forward * Time.deltaTime * Speed;
     }
 ```
-> Also we have to think how we want to handle the collide, In my case I gave the bullet the tag since I manipulate the tranform of the body and doing the same thing we did with the enemy won't work, because the collider doesn't safe the rotation. <br><br>
-> We now need the ability to shoot those Bullets, so we should make a new Script for the Player that is just for shooting.<br>
-> This would look like this:
+Also we have to think how we want to handle the collide.  
+In my case I gave the bullet the tag since I manipulate the transform of the body and doing the same thing we did with the enemy won't work, because the collider doesn't safe the rotation.  
+We now need the ability to shoot those Bullets, so we should make a new Script for the Player that is just for shooting.  
+
+Which would look like this:
 ```C#
 [SerializeField] GameObject Bullet;
 
@@ -354,8 +356,8 @@ With the Enemy speed you can try it yourself how to make it a bit random, I woul
         Instantiate(Bullet,transform.position, Quaternion.identity);
     }
 ```
-> In this case we only shoot if we started the Event, meaning we have to let go of the shooting button and then click again. **DON'T** forget to update the Input Manager inside the Player.  <br>
-> next up I will change my Enemies behaivour so that it destroys itself when it touches the Bullet:
+In this case we only shoot if we started the Event, meaning we have to let go of the shooting button and then click again. **DON'T** forget to update the Input Manager inside the Player.    
+Next up I will change my Enemies behavior so that it destroys itself when it touches the Bullet:
 ```C#
 private void OnCollisionEnter(Collision collision)
     {
@@ -364,7 +366,9 @@ private void OnCollisionEnter(Collision collision)
         Destroy(gameObject);
     }
 ```
-> And that would be it right? Not quite right. There is always something wrong like in OnShooting, where we don't give the rotation of the body that is rotating. Or that Our Bullets are living forever if they never hit something. Sooo a small update for the shooting code:
+And that would be it right? Not quite right. There is always something wrong like in OnShooting, where we don't give the rotation of the body that is rotating. Or that Our Bullets are living forever if they never hit something.  
+
+Sooo a small update for the shooting code:
 ```C#
 public void OnShooting(InputAction.CallbackContext context)
     {
@@ -372,7 +376,7 @@ public void OnShooting(InputAction.CallbackContext context)
         Instantiate(Bullet,transform.position, transform.Find("Body").rotation);
     }
 ```
-> And in the script of the Bullet:
+And in the script of the Bullet:
 ```C#
     [SerializeField] float Speed;
     [SerializeField] float LifeSpan;
@@ -384,8 +388,9 @@ public void OnShooting(InputAction.CallbackContext context)
         LifeSpan -= Time.deltaTime;
     }
 ```
-> **Nice Time to Commit 👁️👁️**<br>
-> Alright next up would be to add HP and the UI.
+**Nice Time to Commit 👁️👁️**  
+
+Alright next up would be to add HP and the UI.
 ## UI
 ### Healthbar
 > First off, we merge the Shooting branch back to our main branch.<br><br>
