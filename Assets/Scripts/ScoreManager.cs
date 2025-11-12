@@ -23,6 +23,5 @@ public class ScoreManager : MonoBehaviour
             data.highScore = data.score;
         }
         SceneManager.LoadScene("GameOver");
-
     }
 }
